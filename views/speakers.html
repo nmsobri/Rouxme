@@ -1,0 +1,51 @@
+{% extends "layouts/default.html" %}
+
+{% block content %}
+
+    <div class="primary">
+
+        {% include "partials/speaker.html" %}
+
+    </div>
+
+    <div class="secondary">
+
+        <article class="nextmeeting">
+            <h1>Next Meeting</h1>
+            <p>
+                <img src="{{appData.meeting.where.img}}" alt="Meeting Location"/> Our next meeting will be on
+                {{appData.meeting.date}}, {{appData.meeting.time}} at
+                {{appData.meeting.where.name}} {{appData.meeting.where.address}}
+            </p>
+
+            <p>{% include "partials/social.html" %}</p>
+        </article>
+
+        <article class="artworklist">
+
+            <h1>Artwork on display</h1>
+            <p>While you attend the conference, head over to our gallery where you can check out some of the work from our speakers.</p>
+
+            <div class="pixgrid">
+
+                {% if artwork.length > 0 %}
+
+                    {% for item in artwork %}
+
+                        <img src="/images/artwork/{{item}}" alt="Artwork"/>
+
+                    {% endfor %}
+
+                {% else %}
+
+                    No Artwork
+
+                {% endif %}
+
+            </div>
+
+        </article>
+
+    </div>
+
+{% endblock %}

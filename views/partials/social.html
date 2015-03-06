@@ -1,0 +1,15 @@
+<article class="socialmediaicons">
+
+    <span class="title">Join the movement: </span>
+
+    <ul class="group">
+
+        {% for item in appData.social %}
+
+            <li><a href="{{item.url}}"><img class="icon" src="{{item.img}}" alt="{{item.shortname}}"/></a></li>
+
+        {% endfor %}
+
+    </ul>
+
+</article>

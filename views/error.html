@@ -1,0 +1,31 @@
+{% extends "layouts/default.html" %}
+
+{% block content %}
+
+    <div class="primary">
+
+        <h2>404 Page Not Found</h2>
+
+    </div>
+
+
+    <div class="secondary">
+
+        <article class="nextmeeting">
+            <h1>Next Meeting</h1>
+            <p>
+                <img src="{{appData.meeting.where.img}}" alt="Meeting Location"/> Our next meeting will be on
+                {{appData.meeting.date}}, {{appData.meeting.time}} at
+                {{appData.meeting.where.name}} {{appData.meeting.where.address}}
+            </p>
+
+            <p>{% include "partials/social.html" %}</p>
+        </article>
+
+        <article class="artworklist">
+            <h1>Artwork on display</h1>
+        </article>
+
+    </div>
+
+{% endblock %}

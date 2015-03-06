@@ -1,0 +1,32 @@
+<article class="speakerlist">
+    <section class="layout">
+        <div class="speakers">
+
+            {% for artist in artists %}
+
+            <article class="artist group">
+
+                <h3>{{artist.title}}<span class="small">with <a href="/speakers/{{artist.shortname}}">{{artist.name}}</a></span></h3>
+
+                <p>
+                    <a href="/speakers/{{artist.shortname}}">
+                        <img class="speaker" src="/images/speakers/{{artist.shortname}}_tn.jpg" alt="Photo of {{artist.name}}"/>
+                    </a>
+
+                    {{artist.summary}}
+
+                    {% if (id) %}
+
+                    {{artist.description|safe}}
+
+                    {% endif %}
+
+                </p>
+
+            </article>
+
+            {% endfor %}
+
+        </div>
+    </section>
+</article>

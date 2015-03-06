@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+
+    {% include "../partials/meta.html" %}
+
+    <title>
+        {% block title %}Express App{% endblock %}
+    </title>
+
+    {% block stylesheets %}
+        <link rel="stylesheet" href="/stylesheets/style.css">
+    {% endblock %}
+
+</head>
+
+<body class="{{page}}">
+
+    {% include "../partials/header.html" %}
+
+    <div class="layout">
+        {% block content %}{% endblock %}
+    </div>
+
+    {% include "../partials/footer.html" %}
+
+    {% block javascripts %}
+        <script src="/javascripts/script.js"></script>
+    {% endblock %}
+
+</body>
+
+</html>
